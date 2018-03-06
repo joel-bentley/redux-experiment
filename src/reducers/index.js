@@ -1,14 +1,9 @@
 import { combineReducers } from 'redux';
 
-import * as currentTime from './currentTime';
-import * as currentUser from './currentUser';
+import currentTimeReducer from './currentTime';
+import currentUserReducer from './currentUser';
 
-export const initialState = {
-  time: currentTime.initialState,
-  user: currentUser.initialState,
-};
-
-export const rootReducer = combineReducers({
-  time: currentTime.reducer,
-  user: currentUser.reducer,
+export default combineReducers({
+  time: currentTimeReducer,
+  user: currentUserReducer,
 });

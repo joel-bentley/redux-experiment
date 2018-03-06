@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchNewTime } from '../actions/actions';
+import { actions as currentTimeActions } from '../reducers/currentTime';
 
 function Home(props) {
   return (
     <div>
       <h1>Home</h1>
       <p>Current time: {props.currentTime}</p>
-      <Link to="/about">Go to About</Link>
+      <p>
+        <Link to="/about">Go to About</Link>
+      </p>
       <button onClick={props.updateTime}>Update Time</button>
     </div>
   );
@@ -21,7 +23,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { updateTime: () => dispatch(fetchNewTime()) };
+  return { updateTime: () => dispatch(currentTimeActions.fetchNewTimeAPI()) };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

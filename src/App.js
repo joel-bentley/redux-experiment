@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Menu, Icon } from 'semantic-ui-react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/HomeContainer';
-import About from './components/About';
+import Home from './containers/Home';
+import About from './containers/About';
 
 class App extends React.Component {
   render() {
