@@ -23,7 +23,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { updateTime: () => dispatch(currentTimeActions.fetchNewTimeAPI()) };
+  return { updateTime: () => dispatch(currentTimeActions.fetchNewTime()) };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
